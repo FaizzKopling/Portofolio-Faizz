@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cahyo Faizz Khafidzi - Portfolio</title>
+    <link rel="icon" type="image/png" href="image/favicon-32x32.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        .section { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .section.visible { opacity: 1; transform: translateY(0); }
+        .skill-bar { height: 8px; border-radius: 4px; background-color: #e0e0e0; overflow: hidden; }
+        .skill-progress { height: 100%; border-radius: 4px; background: linear-gradient(90deg, #3b82f6, #8b5cf6); transition: width 1s ease-in-out; }
+        .project-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: #3b82f6; transition: width 0.3s ease; }
+        .nav-link:hover::after, .active::after { width: 100%; }
+        .certification-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .certification-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <nav class="fixed w-full bg-white/80 backdrop-blur-sm shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Cahyo Faizz Khafidzi</a>
+            <div class="hidden md:flex space-x-10">
+                <a href="#home" class="nav-link active font-medium text-gray-700 hover:text-indigo-600 transition-colors">Beranda</a>
+                <a href="#about" class="nav-link font-medium text-gray-700 hover:text-indigo-600 transition-colors">Tentang</a>
+                <a href="#experience" class="nav-link font-medium text-gray-700 hover:text-indigo-600 transition-colors">Pengalaman</a>
+                <a href="#sertifikasi" class="nav-link font-medium text-gray-700 hover:text-indigo-600 transition-colors">Sertifikasi</a>
+                <a href="#portfolio" class="nav-link font-medium text-gray-700 hover:text-indigo-600 transition-colors">Proyek</a>
+                <a href="#contact" class="nav-link font-medium text-gray-700 hover:text-indigo-600 transition-colors">Kontak</a>
+                <a href="index-en.html" class="ml-4 px-3 py-1 border-2 border-indigo-600 text-indigo-600 rounded-md text-sm font-medium hover:bg-indigo-50 transition-colors">EN</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white w-full px-6 py-4 shadow-lg">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#sertifikasi" class="nav-link">Certification</a>
+                <a href="#portfolio" class="nav-link">Projek</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex items-center pt-24 pb-16">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center md:gap-16">
+            <div class="md:w-5/12 mb-10 md:mb-0 section">
+                <h1 class="text-4xl md:text-4xl font-bold mb-2 leading-relaxed">
+                    Hai, saya
+                </h1>
+                <h1 class="text-5xl md:text-5xl font-bold mb-4 leading-normal whitespace-nowrap bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                    Cahyo Faizz Khafidzi
+                </h1>
+                <h2 class="text-1xl md:text-2xl text-gray-600 mb-7 font-medium">Digital Marketer, Content Creator &amp; UI/UX Designer</h2>
+                <div class="flex flex-wrap gap-4 mt-12">
+                    <a href="#portfolio" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl">Lihat Pekerjaan Saya</a>
+                    <a href="#contact" class="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-8 py-3 rounded-lg transition-all duration-300 hover:-translate-y-1">Hubungi saya</a>
+                </div>
+            </div>
+            <div class="md:w-4/12 section flex justify-center">
+                <div class="relative max-w-[18rem] md:max-w-sm">
+                    <div class="rounded-full p-1 bg-gradient-to-r from-indigo-500 to-purple-600">
+                        <img src="image\WhatsApp Image 2024-07-18 at 20.18.09 (1).jpeg" 
+                             alt="Cahyo Faizz Khafidzi" 
+                             class="rounded-full w-full border-4 border-white shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 section">
+                <span class="text-sm font-medium text-indigo-600 mb-2 block uppercase tracking-wider">Siapa Saya</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-indigo-800 bg-clip-text text-transparent">Tentang Saya</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-10">
+                <div class="md:w-1/2 section">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">Siapa Saya</h3>
+                    <p class="text-gray-700 mb-4">Saya Cahyo Faizz Khafidzi, mahasiswa Program Studi S1 Bisnis Digital Universitas Negeri Surabaya tahun 2023, 
+                        yang proaktif dan memiliki hasrat besar pada industri kreatif dan pemasaran digital. Pengalaman saya sebagai Ketua pelakasana untuk kompetisi 
+                        Business Model Canvas (BMC) dan webinar kewirausahaan telah mengasah kemampuan saya dalam memimpin tim, manajemen proyek dari awal hingga akhir, 
+                        dan memastikan acara berjalan sukses.  </p>
+                    <p class="text-gray-700 mb-6">Saya juga dipercaya sebagai Kepala Departemen Ekonomi Kreatif Formadiksi KIPK Unesa, di mana saya bertanggung jawab 
+                        dalam eksekusi strategi untuk program kerja yang inovatif. Di luar akademik, saya memiliki pengalaman praktis di industri kreatif sebagai support fotografer 
+                        untuk acara wedding, yang melatih mata saya untuk detail visual dan kemampuan teknis fotografi. Saya memiliki keahlian teknis yang solid dalam produksi konten,
+                         meliputi desain grafis, editing video, fotografi, serta dasar-dasar pengembangan web dan aplikasi mobile.</p>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold mb-4">Pendidikan</h4>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h5 class="font-medium">Universitas Negeri Surabaya</h5>
+                                <p class="text-gray-600 text-sm">S1 Bisnis Digital, 2023-Now</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h5 class="font-medium">SMKN 2 Purwokerto</h5>
+                                <p class="text-gray-600 text-sm">Multimedia, 2020-2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 section">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">Kemampuan</h3>
+                    <div class="mb-10">
+                        <h4 class="text-lg font-medium mb-6 text-gray-800 flex items-center gap-2">
+                            <span class="w-2 h-2 bg-indigo-600 rounded-full"></span>
+                            <span>Keterampilan Teknis</span>
+                        </h4>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">Desain</span>
+                                    <span class="text-sm text-gray-500">Mahir</span>
+                                </div>
+                                <div class="relative w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+                                    <div class="absolute h-full bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Editing (Video & Foto)</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Fotografi & Videografi</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Pengkodingan (Membuat Web & Aplikasi)</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="75"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-lg font-medium mb-4">Alat</h4>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="flex items-center bg-white px-4 py-2 rounded-lg shadow-sm"><i class="fab fa-figma text-indigo-600 mr-2"></i><span>Figma</span></div>
+                            <div class="flex items-center bg-white px-4 py-2 rounded-lg shadow-sm"><i class="fas fa-pen-ruler text-cyan-500 mr-2"></i><span>Canva</span></div>
+                            <div class="flex items-center bg-white px-4 py-2 rounded-lg shadow-sm"><i class="fas fa-video text-black mr-2"></i><span>CapCut</span></div>
+                            <div class="flex items-center bg-white px-4 py-2 rounded-lg shadow-sm"><i class="fab fa-android text-green-400 mr-2"></i><span>Android Studio</span></div>
+                            <div class="flex items-center bg-white px-4 py-2 rounded-lg shadow-sm"><i class="fas fa-palette text-blue-500 mr-2"></i><span>Photoshop</span></div>
+                            <div class="flex items-center bg-white px-4 py-2 rounded-lg shadow-sm"><i class="fas fa-terminal text-purple-600 mr-2"></i><span>VS Code</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 section">
+                 <span class="text-sm font-medium text-indigo-600 mb-2 block uppercase tracking-wider">Jenjang karir</span>
+                 <h2 class="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-indigo-800 bg-clip-text text-transparent">Pengalaman Kerja dan Organisasi</h2>
+                 <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto rounded-full"></div>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="relative border-l-2 border-indigo-200 pl-6 md:pl-10 space-y-12">
+                    <div class="relative section">
+                        <div class="absolute -left-[33px] md:-left-[49px] top-1 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
+                        <p class="text-sm font-semibold text-indigo-600">2024-2026</p>
+                        <h3 class="text-2xl font-bold mt-1">Ketua Departemen Ekonomi Kreatif</h3>
+                        <p class="text-gray-500 mb-4">Formadiksi KIP-K Universitas Negeri Surabaya</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li>Memegang sekaligus menjadi ketua pelaksana proker Webinar dan Lomba BMC </li>
+                            <li>Bertanggung jawab atas semua agenda didalam dept ekonomi kreatif .</li>
+                        </ul>
+                    </div>
+                    <div class="relative section">
+                        <div class="absolute -left-[33px] md:-left-[49px] top-1 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
+                        <p class="text-sm font-semibold text-indigo-600">Desember 2024</p>
+                        <h3 class="text-2xl font-bold mt-1">Staff Sie PDD (Publikasi, Dekorasi, dan Dokumentasi) Sosialisasi KIPK</h3>
+                        <p class="text-gray-500 mb-4">Formadiksi KIPK Unesa</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li>Membuat desain poster acara</li>
+                            <li>Mendokumentasikan acara</li>
+                        </ul>
+                    </div>
+                    <div class="relative section">
+                        <div class="absolute -left-[33px] md:-left-[49px] top-1 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
+                        <p class="text-sm font-semibold text-indigo-600">November 2024</p>
+                        <h3 class="text-2xl font-bold mt-1">Ketua Pelaksana BMC Competition & Webinar Creative Economy</h3>
+                        <p class="text-gray-500 mb-4">Formadiksi KIPK Unesa</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li>Memimpin seluruh panitia yang terdiri dari berbagai divisi, mulai dari tahap perencanaan strategis hingga evaluasi akhir pasca-acara.</li>
+                            <li>Mengembangkan konsep acara, menyusun timeline dan alur kerja, mengelola anggaran, serta mendelegasikan tugas secara efektif kepada setiap kepala divisi.</li>
+                            <li>Bertindak sebagai pengambil keputusan utama dan pemecah masalah saat menghadapi tantangan tak terduga, baik sebelum maupun selama acara berlangsung.</li>
+                        </ul>
+                    </div>
+                    <div class="relative section">
+                        <div class="absolute -left-[33px] md:-left-[49px] top-1 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
+                        <p class="text-sm font-semibold text-indigo-600">Oktober 2024</p>
+                        <h3 class="text-2xl font-bold mt-1">Staff Sie PDD (Publikasi, Dekorasi, dan Dokumentasi) Webinar TOEFL</h3>
+                        <p class="text-gray-500 mb-4">Formadiksi KIPK Unesa</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li>Membuat desain poster acara</li>
+                            <li>Mendokumentasikan acara</li>
+                        </ul>
+                    </div>
+                    <div class="relative section">
+                        <div class="absolute -left-[33px] md:-left-[49px] top-1 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
+                        <p class="text-sm font-semibold text-indigo-600">September 2024</p>
+                        <h3 class="text-2xl font-bold mt-1">Staff Sie PDD (Publikasi, Dekorasi, dan Dokumentasi) Competition Expo</h3>
+                        <p class="text-gray-500 mb-4">HMP Bisnis Digital</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li>Membuat desain sertifikat pemateri, panitia, dan peserta.</li>
+                            <li>Menjadi operator pada hari h acara</li>
+                        </ul>
+                    </div>
+                    <div class="relative section">
+                        <div class="absolute -left-[33px] md:-left-[49px] top-1 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
+                        <p class="text-sm font-semibold text-indigo-600">Mei 2024</p>
+                        <h3 class="text-2xl font-bold mt-1">Staff Sie PDD (Publikasi, Dekorasi, dan Dokumentasi) HISTORY</h3>
+                        <p class="text-gray-500 mb-4">BEM Fakultas Ekonomika dan Bisnis</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li>Membuat desain sertifikat pemateri, panitia, dan peserta.</li>
+                            <li>Membuat desain Cue card MC.</li>
+                            <li>Membuat konten acara.</li>
+                        </ul>
+                    </div>
+                     <div class="relative section">
+                        <div class="absolute -left-[33px] md:-left-[49px] top-1 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
+                        <p class="text-sm font-semibold text-indigo-600">Mei 2024</p>
+                        <h3 class="text-2xl font-bold mt-1">Staff Sie Acara Studi Banding</h3>
+                        <p class="text-gray-500 mb-4">Formadiksi KIPK Unesa</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li>Merancang konsep permainan atau ice breaking dari awal berdasarkan tujuan acara.</li>
+                            <li>Menyiapkan semua materi dan logistik yang dibutuhkan untuk sesi.</li>
+                            <li>Bertanggung jawab menjaga antusiasme peserta dan memastikan sesi berjalan tepat waktu.</li>
+                        </ul>
+                    </div>
+                    <div class="relative section">
+                        <div class="absolute -left-[33px] md:-left-[49px] top-1 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
+                        <p class="text-sm font-semibold text-indigo-600">November 2023</p>
+                        <h3 class="text-2xl font-bold mt-1">Fotografer/videographer</h3>
+                        <p class="text-gray-500 mb-4">Support Fotografer</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li>Mendokumentasi acara pernikahan.</li>
+                            <li>Membuat konten pernikahan.</li>
+                        </ul>
+                    </div>
+                    <div class="relative section">
+                         <div class="absolute -left-[33px] md:-left-[49px] top-1 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
+                        <p class="text-sm font-semibold text-indigo-600">Februari 2022-April 2022</p>
+                        <h3 class="text-2xl font-bold mt-1">Siswa PKL/Magang</h3>
+                        <p class="text-gray-500 mb-4">Unsoed Press</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li>Menyusun Halaman buku.</li>
+                            <li>Mengedit Mockup buku Photosop.</li>
+                            <li>Finishing Cover Buku.</li>
+                        </ul>
+                    </div>
+                    <div class="relative section">
+                         <div class="absolute -left-[33px] md:-left-[49px] top-1 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
+                        <p class="text-sm font-semibold text-indigo-600">Januari 2022-Januari 2023</p>
+                        <h3 class="text-2xl font-bold mt-1">Koordinator Jurnalistik</h3>
+                        <p class="text-gray-500 mb-4">ROHIS SMKN 2 Purwokerto</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                            <li>Bertanggung jawab atas semua dokumentasi,  dari kegiatan yang sedang dilakukan.</li>
+                            <li>Bertugas mendokumentasi berbagagai acara yang diselenggarakan oleh organisasi.</li>
+                            <li>Bertugas membuat desain poster, banner dll.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sertifikasi" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 section">
+                <span class="text-sm font-medium text-indigo-600 mb-2 block uppercase tracking-wider">Kredensial</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-indigo-800 bg-clip-text text-transparent">Sertifikasi Profesional</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="certification-card bg-white rounded-lg shadow-md overflow-hidden section">
+                    <a href="#sertifikasi-modal-1" class="sertifikasi-link cursor-pointer">
+                        <img class="w-full h-56 object-cover object-top" src="image/Prodi Bisnis Digital UNESA_Cahyo Faizz Khafidzi_page-0001.jpg" alt="Sertifikat Google">
+                    </a>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800">HP LIFE - Entrepreneurship Course</h3>
+                        <p class="text-gray-600">Prestasi Junior Indonesia</p>
+                        <p class="text-sm text-gray-500 mt-1">Diterbitkan: Juni 2025</p>
+                    </div>
+                </div>
+
+                <div class="certification-card bg-white rounded-lg shadow-md overflow-hidden section">
+                     <a href="#sertifikasi-modal-2" class="sertifikasi-link cursor-pointer">
+                        <img class="w-full h-56 object-cover object-top" src="image/Prodi Bisnis Digital UNESA_Cahyo Faizz Khafidzi (1)_page-0001.jpg" alt="Sertifikat BNSP">
+                    </a>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800">Project Management</h3>
+                        <p class="text-gray-600">Prestasi Junior Indonesia</p>
+                        <p class="text-sm text-gray-500 mt-1">Diterbitkan: Juni 2025</p>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <div id="sertifikasi-modal-1" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300 p-4">
+        <div class="relative">
+            <button class="close-modal absolute -top-4 -right-4 text-white bg-indigo-600 rounded-full h-10 w-10 flex items-center justify-center hover:bg-indigo-700 z-10 shadow-lg">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <img src="image/Prodi Bisnis Digital UNESA_Cahyo Faizz Khafidzi_page-0001.jpg" alt="Sertifikat Digital Marketing" class="block rounded-lg shadow-xl max-w-[90vw] max-h-[90vh]">
+        </div>
+    </div>
+
+    <div id="sertifikasi-modal-2" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300 p-4">
+        <div class="relative">
+             <button class="close-modal absolute -top-4 -right-4 text-white bg-indigo-600 rounded-full h-10 w-10 flex items-center justify-center hover:bg-indigo-700 z-10 shadow-lg">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <img src="image/Prodi Bisnis Digital UNESA_Cahyo Faizz Khafidzi (1)_page-0001.jpg" alt="Sertifikat Junior Graphic Designer" class="block rounded-lg shadow-xl max-w-[90vw] max-h-[90vh]">
+        </div>
+    </div>
+
+    <section id="portfolio" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 section">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Projek Saya</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-6">Berikut adalah proyek pilihan saya, yang menampilkan keahlian dalam berbagai bidang, mulai dari produksi konten visual (film & fotografi) hingga pengembangan aplikasi dan desain UI/UX. Setiap karya adalah hasil dari perencanaan yang matang dan eksekusi yang teliti.
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 section group">
+                    <div class="overflow-hidden">
+                        <img src="image\DSC00252.jpg" 
+                             alt="Wedding Photography" 
+                             class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="px-6 pt-6 pb-8">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 group-hover:text-indigo-600 transition-colors">Wedding Photography</h3>
+                        <p class="text-gray-600 mb-4">Dokumentasi acara dan pembuatan konten untuk upacara pernikahan.</p>
+                        <div class="flex space-x-3 mt-4">
+                            <a href="#project-modal-1" class="text-indigo-600 hover:text-indigo-800 font-medium">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md section group">
+                    <div class="overflow-hidden">
+                        <img src="image\feature graphic londre.png" alt="Londre App" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="px-6 pt-6 pb-8">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 group-hover:text-indigo-600 transition-colors">LONDRE - Application Mobile</h3>
+                        <p class="text-gray-600 mb-4">Aplikasi Android untuk memudahkan pemesanan dan pelacakan status laundry.</p>
+                        <div class="flex space-x-3 mt-4">
+                            <a href="#project-modal-2" class="text-indigo-600 hover:text-indigo-800 font-medium">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md section group">
+                    <div class="overflow-hidden">
+                        <img src="image\REMOVER (1).png" alt="Travel Blog Platform" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="px-6 pt-6 pb-8">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 group-hover:text-indigo-600 transition-colors">Short Movie</h3>
+                        <p class="text-gray-600 mb-4">Film ini dibuat dan diajukan untuk kompetisi Lomba Inovasi Digital Mahasiswa (LIDM) 2024 pada divisi Inovasi Video Digital.</p>
+                        <div class="flex space-x-3 mt-4">
+                            <a href="#project-modal-3" class="text-indigo-600 hover:text-indigo-800 font-medium">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 section">
+                <a href="semua-projek.html" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg transition duration-300">Lihat Semua Proyek</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="project-modal-1" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 relative">
+            <button class="close-modal absolute top-4 right-4 text-gray-500 hover:text-gray-800 z-10">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="text-2xl font-bold">Wedding Photography</h3>
+            </div>
+            <img src="image\DSC00252.jpg" alt="Wedding Photography" class="w-full h-64 object-cover rounded-lg mb-6">
+            <div class="mb-6">
+                <h4 class="text-xl font-semibold mb-2">Ringkasan Proyek</h4>
+                <p class="text-gray-700">Memberikan dukungan fotografi profesional untuk acara pernikahan, dengan fokus pada pengambilan momen-momen 
+                    spontan dan acara-acara seremonial utama. Peran tersebut melibatkan kerja sama dengan fotografer utama untuk memastikan cakupan yang komprehensif dan menghasilkan gambar berkualitas tinggi untuk kenangan berharga klien.</p>
+            </div>
+            <div class="mt-8">
+                <h4 class="text-xl font-semibold mb-4">Galeri Proyek</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div><img src="image\DSC00262.jpg" alt="Detail Proyek 1" class="rounded-lg shadow-md w-full"></div>
+                    <div><img src="image\DSC00120 (1).jpg" alt="Detail Proyek 2" class="rounded-lg shadow-md w-full"></div>
+                    <div><img src="image\DSC00332 (1).JPG" alt="Detail Proyek 3" class="rounded-lg shadow-md w-full"></div>
+                    <div><img src="image\DSC00154 (1).jpg" alt="Detail Proyek 4" class="rounded-lg shadow-md w-full"></div>
+                    <div><img src="image\DSC00132 (1).jpg" alt="Detail Proyek 5" class="rounded-lg shadow-md w-full"></div>
+                    <div><img src="image\DSC00259.jpg" alt="Detail Proyek 6" class="rounded-lg shadow-md w-full"></div>
+                    <div><img src="image\DSC00248.jpg" alt="Detail Proyek 7" class="rounded-lg shadow-md w-full"></div>
+                    <div><img src="image\DSC00343 (1).jpg" alt="Detail Proyek 8" class="rounded-lg shadow-md w-full"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="project-modal-2" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 relative">
+             <button class="close-modal absolute top-4 right-4 text-gray-500 hover:text-gray-800 z-10">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="text-2xl font-bold">Fitness Tracker App</h3>
+            </div>
+            <img src="image\feature graphic londre.png" alt="Fitness Tracker App" class="w-full h-64 object-cover rounded-lg mb-6">
+            <div class="mb-6">
+                <h4 class="text-xl font-semibold mb-2">Ringkasan Proyek</h4>
+                <p class="text-gray-700">Sebagai pemenuhan tugas Ujian Akhir Semester (UAS) pada mata kuliah Pemrograman Aplikasi Mobile, saya merancang dan mengembangkan LONDRE, sebuah prototipe aplikasi Android untuk layanan laundry. Tujuan utama dari proyek ini adalah untuk mengaplikasikan konsep-konsep fundamental pengembangan aplikasi mobile, mulai dari perancangan antarmuka (UI/UX) hingga implementasi logika bisnis—ke dalam sebuah aplikasi fungsional.</p>
+            </div>
+            <div class="mt-8">
+                <h4 class="text-xl font-semibold mb-4">Galeri Proyek</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div><img src="image\WhatsApp Image 2025-06-10 at 19.58.18_2d4a94dc.jpg" alt="Detail Proyek 1" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image\WhatsApp Image 2025-06-10 at 19.58.20_4b455f00.jpg" alt="Detail Proyek 2" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image\WhatsApp Image 2025-06-10 at 19.58.21_125c7693.jpg" alt="Detail Proyek 3" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image\WhatsApp Image 2025-06-10 at 19.58.22_1b86ba07.jpg" alt="Detail Proyek 4" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image\WhatsApp Image 2025-06-10 at 19.58.23_60d6d809.jpg" alt="Detail Proyek 5" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image\WhatsApp Image 2025-06-10 at 19.58.24_7d44e313.jpg" alt="Detail Proyek 6" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image\WhatsApp Image 2025-06-10 at 19.58.24_9486e946.jpg" alt="Detail Proyek 7" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image\WhatsApp Image 2025-06-10 at 19.58.25_798a8cfd.jpg" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image\Screenshot (1316).png" class="rounded-lg shadow-md w-full"></div>
+                    <div><img src="image\Screenshot (1326).png" class="rounded-lg shadow-md w-full"></div>   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="project-modal-3" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 relative">
+             <button class="close-modal absolute top-4 right-4 text-gray-500 hover:text-gray-800 z-10">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="text-2xl font-bold">Short Movie</h3>
+            </div>
+            <img src="image\REMOVER (1).png" alt="Travel Blog Platform" class="w-full h-64 object-cover rounded-lg mb-6">
+            <div class="mb-6">
+                <h4 class="text-xl font-semibold mb-2">Ringkasan Proyek</h4>
+                <p class="text-gray-700">Proyek ini adalah karya yang saya dan tim saya ciptakan dengan penuh semangat untuk diikutsertakan dalam Lomba Inovasi
+                     Digital Mahasiswa (LIDM) 2024. Sebuah kebanggaan tersendiri bagi kami karena film ini berhasil lolos seleksi internal dan terpilih untuk berkompetisi lebih lanjut.</p>
+            </div>
+             <div class="mt-8">
+                <h4 class="text-xl font-semibold mb-4">Galeri Proyek</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div><img src="image\REMOVER (1).png" alt="Detail Proyek 1" class="rounded-lg shadow-md w-full"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 section">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Hubungi Saya</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-6">Punya proyek atau ingin mendiskusikan peluang potensial? Jangan ragu untuk menghubungi kami!</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2 section">
+    <form id="contact-form" action="https://formspree.io/f/xjkrrvgq" method="POST" class="bg-white p-8 rounded-lg shadow-md">
+        <div class="mb-6">
+            <label for="name" class="block text-gray-700 font-medium mb-2">Nama Anda</label>
+            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+        </div>
+        <div class="mb-6">
+            <label for="email" class="block text-gray-700 font-medium mb-2">Email Anda</label>
+            <input type="email" id="email" name="_replyto" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+        </div>
+        <div class="mb-6">
+            <label for="message" class="block text-gray-700 font-medium mb-2">Pesan Anda</label>
+            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required></textarea>
+        </div>
+        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg transition duration-300">
+            Kirim Pesan
+        </button>
+        <div id="form-message" class="mt-4 text-center hidden"></div>
+    </form>
+</div>
+                
+                <div class="lg:w-1/2 section">
+                    <div class="bg-white p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-2xl font-semibold mb-6">Informasi Kontak</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start"><div class="bg-indigo-100 p-3 rounded-full mr-4"><i class="fas fa-envelope text-indigo-600"></i></div><div><h4 class="font-medium">Email</h4><p class="text-gray-600">cahyofaizz@gmail.com</p></div></div>
+                            <div class="flex items-start"><div class="bg-indigo-100 p-3 rounded-full mr-4"><i class="fas fa-phone-alt text-indigo-600"></i></div><div><h4 class="font-medium">Nomor</h4><p class="text-gray-600">+6289517181377</p></div></div>
+                            <div class="flex items-start"><div class="bg-indigo-100 p-3 rounded-full mr-4"><i class="fas fa-map-marker-alt text-indigo-600"></i></div><div><h4 class="font-medium">Lokasi</h4><p class="text-gray-600">Surabaya, Indonesia</p></div></div>
+                        </div>
+                        <h3 class="text-2xl font-semibold mt-10 mb-6">Ikuti Saya</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/cahyo-faizz-khafidzi-bba74a282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="bg-gray-100 hover:bg-indigo-100 p-3 rounded-full transition duration-300"><i class="fab fa-linkedin-in text-gray-700 hover:text-indigo-600"></i></a>
+                            <a href="https://www.instagram.com/faizz.dzi?igsh=MXFpcTUwb3Y0YTZ1eg==" target="_blank" rel="noopener noreferrer" class="bg-gray-100 hover:bg-indigo-100 p-3 rounded-full transition duration-300"><i class="fab fa-instagram text-gray-700 hover:text-indigo-600"></i></a>
+                            <a href="https://www.tiktok.com/@faizzdzi" target="_blank" rel="noopener noreferrer" class="bg-gray-100 hover:bg-indigo-100 p-3 rounded-full transition duration-300"><i class="fab fa-tiktok text-gray-700 hover:text-indigo-600"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-white">Cahyo Faizz Khafidzi</a>
+                    <p class="text-gray-400 mt-2">Menciptakan pengalaman digital yang penting.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/cahyo-faizz-khafidzi-bba74a282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/faizz.dzi?igsh=MXFpcTUwb3Y0YTZ1eg==" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@faizzdzi" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; <span id="current-year"></span> Cahyo Faizz Khafidzi. Hak cipta dilindungi undang-undang.</p>
+            </div>
+        </div>
+    </footer>
+    
+   <script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Smooth scrolling untuk Navigasi (DENGAN PERBAIKAN)
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            
+            // HANYA jalankan smooth scroll jika link adalah internal (#)
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                mobileMenu.classList.add('hidden');
+                const targetId = href;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+            // Jika link bukan internal (misal: "index-en.html"), biarkan browser pindah halaman secara normal.
+        });
+    });
+    
+    // Set tahun di footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Animasi saat scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.section').forEach(section => observer.observe(section));
+    
+    // Animasi skill bars
+    const skillBars = document.querySelectorAll('.skill-progress');
+    const isElementInViewport = (el) => {
+        const rect = el.getBoundingClientRect();
+        return (rect.top <= (window.innerHeight || document.documentElement.clientHeight) && rect.bottom >= 0);
+    };
+    const animateSkillBars = () => {
+        skillBars.forEach(bar => {
+            if (isElementInViewport(bar)) {
+                bar.style.width = bar.getAttribute('data-width') + '%';
+            }
+        });
+    };
+    window.addEventListener('scroll', animateSkillBars);
+    window.addEventListener('load', animateSkillBars);
+
+    // Project modal functionality
+    const projectLinks = document.querySelectorAll('a[href^="#project-modal-"]');
+    projectLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modalId = link.getAttribute('href');
+            const modal = document.querySelector(modalId);
+
+            if (modal) {
+                const closeModalButton = modal.querySelector('.close-modal');
+                
+                modal.classList.remove('hidden');
+                setTimeout(() => modal.classList.add('opacity-100'), 10);
+
+                const closeModal = () => {
+                    modal.classList.remove('opacity-100');
+                    setTimeout(() => modal.classList.add('hidden'), 300);
+                };
+
+                closeModalButton.addEventListener('click', closeModal, { once: true });
+                modal.addEventListener('click', (event) => {
+                    if (event.target === modal) closeModal();
+                });
+
+                setupGallery(modal);
+            }
+        });
+    });
+
+    // Script formulir kontak
+    const contactForm = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+
+    async function handleFormSubmit(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const name = formData.get('name') || 'there';
+
+        try {
+            const response = await fetch(event.target.action, {
+                method: event.target.method,
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                formMessage.textContent = `Terima kasih, ${name}! Pesan Anda telah terkirim.`;
+                formMessage.className = 'mt-4 text-center text-green-600';
+                contactForm.reset();
+            } else {
+                response.json().then(data => {
+                    if (data.errors) {
+                        formMessage.textContent = data.errors.map(e => e.message).join(", ");
+                    } else {
+                        formMessage.textContent = 'Oops! Terjadi masalah saat mengirim formulir.';
+                    }
+                    formMessage.className = 'mt-4 text-center text-red-600';
+                });
+            }
+        } catch (error) {
+            formMessage.textContent = 'Oops! Terjadi masalah pada jaringan. Silakan coba lagi.';
+            formMessage.className = 'mt-4 text-center text-red-600';
+        }
+
+        setTimeout(() => {
+            formMessage.className = 'mt-4 text-center hidden';
+        }, 5000);
+    }
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", handleFormSubmit);
+    }
+
+    const allModalLinks = document.querySelectorAll('a[href^="#project-modal-"], a[href^="#sertifikasi-modal-"]');
+        
+        allModalLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const modalId = link.getAttribute('href');
+                const modal = document.querySelector(modalId);
+
+                if (modal) {
+                    const closeModalButton = modal.querySelector('.close-modal');
+                    
+                    // Cek apakah ini modal proyek untuk setup galeri
+                    if (modal.id.includes('project-modal')) {
+                        setupGallery(modal);
+                    }
+                    
+                    modal.classList.remove('hidden');
+                    setTimeout(() => {
+                        modal.classList.add('opacity-100');
+                    }, 10);
+
+                    const closeModal = () => {
+                        modal.classList.remove('opacity-100');
+                        setTimeout(() => {
+                            modal.classList.add('hidden');
+                        }, 300);
+                    };
+
+                    closeModalButton.addEventListener('click', closeModal, { once: true });
+
+                    modal.addEventListener('click', (event) => {
+                        if (event.target === modal) {
+                            closeModal();
+                        }
+                    });
+                }
+            });
+        });
+        
+        // Fungsi untuk klik gambar galeri di modal (tetap sama)
+        const setupGallery = (modal) => {
+            const mainImage = modal.querySelector('img:first-of-type');
+            const galleryImages = modal.querySelectorAll('.grid img');
+            galleryImages.forEach(galleryImg => {
+                galleryImg.style.cursor = 'pointer';
+                galleryImg.addEventListener('click', () => {
+                    if (mainImage) {
+                        mainImage.src = galleryImg.src;
+                    }
+                });
+            });
+        };
+    
+    // Set active nav link on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a.nav-link');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= (sectionTop - 90)) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
+</body>
+</html>

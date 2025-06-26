@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semua Projek - Cahyo Faizz Khafidzi</title>
+    <link rel="icon" type="image/png" href="image/favicon-32x32.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .active::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <nav class="sticky top-0 w-full bg-white/80 backdrop-blur-sm shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index-id.html" class="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Cahyo Faizz Khafidzi</a>
+            <div class="hidden md:flex space-x-10">
+                <a href="index-id.html#home" class="nav-link font-medium text-gray-700 hover:text-indigo-600 transition-colors">Beranda</a>
+                <a href="index-id.html#about" class="nav-link font-medium text-gray-700 hover:text-indigo-600 transition-colors">Tentang</a>
+                <a href="index-id.html#experience" class="nav-link font-medium text-gray-700 hover:text-indigo-600 transition-colors">Pengalaman</a>
+                <a href="index-id.html#sertifikasi" class="nav-link font-medium text-gray-700 hover:text-indigo-600 transition-colors">Sertifikasi</a>
+                <a href="semua-projek.html" class="nav-link active font-medium text-gray-700 hover:text-indigo-600 transition-colors">Proyek</a>
+                <a href="index-id.html#contact" class="nav-link font-medium text-gray-700 hover:text-indigo-600 transition-colors">Kontak</a>
+                <a href="index-en.html" class="ml-4 px-3 py-1 border-2 border-indigo-600 text-indigo-600 rounded-md text-sm font-medium hover:bg-indigo-50 transition-colors">EN</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white w-full px-6 py-4 shadow-lg">
+            <div class="flex flex-col space-y-4">
+                <a href="index-id.html#home" class="nav-link">Home</a>
+                <a href="index-id.html#about" class="nav-link">About</a>
+                <a href="index-id.html#experience" class="nav-link">Experience</a>
+                <a href="index-id.html#sertifikasi" class="nav-link">Certification</a>
+                <a href="semua-projek.html" class="nav-link">Projects</a>
+                <a href="index-id.html#contact" class="nav-link">Contact</a> 
+        </div>
+    </nav>
+
+    <main class="py-24">
+        <section id="portfolio" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 section visible">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Semua Proyek</h1>
+                    <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto mt-6">Jelajahi berbagai proyek yang telah saya kerjakan, mulai dari desain visual hingga pengembangan aplikasi.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="project-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 section group">
+                    <div class="overflow-hidden">
+                        <img src="image\DSC00252.jpg" 
+                             alt="Wedding Photography" 
+                             class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="px-6 pt-6 pb-8">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 group-hover:text-indigo-600 transition-colors">Wedding Photography</h3>
+                        <p class="text-gray-600 mb-4">Event documentation and content creation for wedding ceremonies.</p>
+                        <div class="flex space-x-3 mt-4">
+                            <a href="#project-modal-1" class="text-indigo-600 hover:text-indigo-800 font-medium">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                    
+                    <div class="project-card bg-white rounded-lg overflow-hidden shadow-md section group">
+                    <div class="overflow-hidden">
+                        <img src="image\feature graphic londre.png" alt="Londre App" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="px-6 pt-6 pb-8">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 group-hover:text-indigo-600 transition-colors">LONDRE - Application Mobile</h3>
+                        <p class="text-gray-600 mb-4">Aplikasi Android untuk memudahkan pemesanan dan pelacakan status laundry.</p>
+                        <div class="flex space-x-3 mt-4">
+                            <a href="#project-modal-2" class="text-indigo-600 hover:text-indigo-800 font-medium">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                    
+                    <div class="project-card bg-white rounded-lg overflow-hidden shadow-md section group">
+                    <div class="overflow-hidden">
+                        <img src="image\REMOVER (1).png" alt="Travel Blog Platform" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="px-6 pt-6 pb-8">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 group-hover:text-indigo-600 transition-colors">Film Pendek</h3>
+                        <p class="text-gray-600 mb-4">Film ini dibuat dan diajukan untuk kompetisi Lomba Inovasi Digital Mahasiswa (LIDM) 2024 pada divisi Inovasi Video Digital.</p>
+                        <div class="flex space-x-3 mt-4">
+                            <a href="#project-modal-3" class="text-indigo-600 hover:text-indigo-800 font-medium">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="project-card bg-white rounded-lg overflow-hidden shadow-md section visible group">
+                        <div class="overflow-hidden">
+                            <img src="image/konten.png" alt="Personal Blog" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="px-6 pt-6 pb-8">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-800 group-hover:text-indigo-600 transition-colors">Video Content</h3>
+                            <p class="text-gray-600 mb-4">Ini adalah sebuah video kampanye sosial yang dibuat untuk meningkatkan kesadaran tentang isu sampah makanan (food waste).</p>
+                            <div class="flex space-x-3 mt-4">
+                                <a href="#project-modal-4" class="text-indigo-600 hover:text-indigo-800 font-medium">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card bg-white rounded-lg overflow-hidden shadow-md section visible group">
+                        <div class="overflow-hidden">
+                            <img src="image/Mockup 6.png" alt="Personal Blog" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="px-6 pt-6 pb-8">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-800 group-hover:text-indigo-600 transition-colors">Desain UI App</h3>
+                            <p class="text-gray-600 mb-4">Berikut adalah kumpulan dari berbagai desain antarmuka (UI) aplikasi yang pernah saya buat.</p>
+                            <div class="flex space-x-3 mt-4">
+                                <a href="#project-modal-5" class="text-indigo-600 hover:text-indigo-800 font-medium">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card bg-white rounded-lg overflow-hidden shadow-md section visible group">
+                        <div class="overflow-hidden">
+                            <img src="image/Mochiy Pop One (2).png" alt="Coffee App UI" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="px-6 pt-6 pb-8">
+                            <h3 class="text-xl font-semibold mb-2 text-gray-800 group-hover:text-indigo-600 transition-colors">Berbagai Desain Grafis</h3>
+                            <p class="text-gray-600 mb-4">Ini adalah kumpulan berbagai karya desain grafis yang menunjukkan kemampuan saya dalam menerjemahkan ide menjadi solusi visual yang efektif.</p>
+                            <div class="flex space-x-3 mt-4">
+                                <a href="#project-modal-6" class="text-indigo-600 hover:text-indigo-800 font-medium">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <div id="project-modal-1" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 relative">
+            <button class="close-modal absolute top-4 right-4 text-gray-500 hover:text-gray-800 z-10">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="text-2xl font-bold">Wedding Photography</h3>
+            </div>
+            <img src="image\DSC00252.jpg" alt="Wedding Photography" class="w-full h-64 object-cover rounded-lg mb-6">
+            <div class="mb-6">
+                <h4 class="text-xl font-semibold mb-2">Ringkasan Proyek</h4>
+                <p class="text-gray-700">Provided professional photography support for a wedding event, focusing on capturing candid moments and key ceremonial events. The role involved collaborating with the main photographer to ensure comprehensive coverage and delivering high-quality images for the client's cherished memories.</p>
+            </div>
+            <div class="mt-8">
+                <h4 class="text-xl font-semibold mb-4">Project Gallery</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div><img src="image\DSC00262.jpg" alt="Detail Proyek 1" class="rounded-lg shadow-md w-full"></div>
+                    <div><img src="image\DSC00120 (1).jpg" alt="Detail Proyek 2" class="rounded-lg shadow-md w-full"></div>
+                    <div><img src="image\DSC00332 (1).JPG" alt="Detail Proyek 3" class="rounded-lg shadow-md w-full"></div>
+                    <div><img src="image\DSC00154 (1).jpg" alt="Detail Proyek 4" class="rounded-lg shadow-md w-full"></div>
+                    <div><img src="image\DSC00132 (1).jpg" alt="Detail Proyek 5" class="rounded-lg shadow-md w-full"></div>
+                    <div><img src="image\DSC00259.jpg" alt="Detail Proyek 6" class="rounded-lg shadow-md w-full"></div>
+                    <div><img src="image\DSC00248.jpg" alt="Detail Proyek 7" class="rounded-lg shadow-md w-full"></div>
+                    <div><img src="image\DSC00343 (1).jpg" alt="Detail Proyek 8" class="rounded-lg shadow-md w-full"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="project-modal-2" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 relative">
+             <button class="close-modal absolute top-4 right-4 text-gray-500 hover:text-gray-800 z-10">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="text-2xl font-bold">Fitness Tracker App</h3>
+            </div>
+            <img src="image\feature graphic londre.png" alt="Fitness Tracker App" class="w-full h-64 object-cover rounded-lg mb-6">
+            <div class="mb-6">
+                <h4 class="text-xl font-semibold mb-2">Ringkasan Proyek</h4>
+                <p class="text-gray-700">Sebagai pemenuhan tugas Ujian Akhir Semester (UAS) pada mata kuliah Pemrograman Aplikasi Mobile, saya merancang dan mengembangkan LONDRE, sebuah prototipe aplikasi Android untuk layanan laundry. Tujuan utama dari proyek ini adalah untuk mengaplikasikan konsep-konsep fundamental pengembangan aplikasi mobile, mulai dari perancangan antarmuka (UI/UX) hingga implementasi logika bisnis—ke dalam sebuah aplikasi fungsional.</p>
+            </div>
+            <div class="mt-8">
+                <h4 class="text-xl font-semibold mb-4">Galeri Proyek</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div><img src="image\WhatsApp Image 2025-06-10 at 19.58.18_2d4a94dc.jpg" alt="Detail Proyek 1" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image\WhatsApp Image 2025-06-10 at 19.58.20_4b455f00.jpg" alt="Detail Proyek 2" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image\WhatsApp Image 2025-06-10 at 19.58.21_125c7693.jpg" alt="Detail Proyek 3" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image\WhatsApp Image 2025-06-10 at 19.58.22_1b86ba07.jpg" alt="Detail Proyek 4" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image\WhatsApp Image 2025-06-10 at 19.58.23_60d6d809.jpg" alt="Detail Proyek 5" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image\WhatsApp Image 2025-06-10 at 19.58.24_7d44e313.jpg" alt="Detail Proyek 6" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image\WhatsApp Image 2025-06-10 at 19.58.24_9486e946.jpg" alt="Detail Proyek 7" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image\WhatsApp Image 2025-06-10 at 19.58.25_798a8cfd.jpg" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image\Screenshot (1316).png" class="rounded-lg shadow-md w-full"></div>
+                    <div><img src="image\Screenshot (1326).png" class="rounded-lg shadow-md w-full"></div>   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="project-modal-3" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 relative">
+             <button class="close-modal absolute top-4 right-4 text-gray-500 hover:text-gray-800 z-10">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="text-2xl font-bold">Short Movie</h3>
+            </div>
+            <img src="image\REMOVER (1).png" alt="Travel Blog Platform" class="w-full h-64 object-cover rounded-lg mb-6">
+            <div class="mb-6">
+                <h4 class="text-xl font-semibold mb-2">Ringkasan Proyek</h4>
+                <p class="text-gray-700">Proyek ini adalah karya yang saya dan tim saya ciptakan dengan penuh semangat untuk diikutsertakan dalam Lomba Inovasi
+                     Digital Mahasiswa (LIDM) 2024. Sebuah kebanggaan tersendiri bagi kami karena film ini berhasil lolos seleksi internal dan terpilih untuk berkompetisi lebih lanjut.</p>
+            </div>
+             <div class="mt-8">
+                <h4 class="text-xl font-semibold mb-4">Galeri Proyek</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div><img src="image\REMOVER (1).png" alt="Detail Proyek 1" class="rounded-lg shadow-md w-full"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="project-modal-4" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 relative">
+             <button class="close-modal absolute top-4 right-4 text-gray-500 hover:text-gray-800 z-10">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="text-2xl font-bold">Video Content</h3>
+            </div>
+            <img src="image\konten.png" alt="Fitness Tracker App" class="w-full h-64 object-cover rounded-lg mb-6">
+            <div class="mb-6">
+                <h4 class="text-xl font-semibold mb-2">Ringkasan Proyek</h4>
+                <p class="text-gray-700">Ini adalah sebuah video kampanye sosial yang dibuat untuk meningkatkan kesadaran tentang isu sampah makanan (food waste). Video ini diikutsertakan dalam "Video Content Competition Gayatama 2024" dan berhasil memenangkan penghargaan Juara 2.
+                    Link Video: https://www.instagram.com/reel/DBJLmfwux-b/?igsh=NDNnaGs3a3BibG5i
+                </p>
+            </div>
+            <div class="mt-8">
+                <h4 class="text-xl font-semibold mb-4">Ringkasan Proyek</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div><img src="image/Cahyo Faizz Khafidzi (2)_page-0001.jpg" alt="Detail Proyek 1" class="rounded-lg shadow-md w-full"></div>
+                    <div><img src="image/WhatsApp Image 2025-06-24 at 19.49.08_7dce848d.jpg" alt="Detail Proyek 1" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/WhatsApp Image 2025-06-24 at 19.49.09_f96c1e13.jpg" alt="Detail Proyek 1" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="project-modal-5" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 relative">
+             <button class="close-modal absolute top-4 right-4 text-gray-500 hover:text-gray-800 z-10">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="text-2xl font-bold">Desain UI App</h3>
+            </div>
+            <img src="image/Mockup 6.png" alt="Fitness Tracker App" class="w-full h-64 object-cover rounded-lg mb-6">
+            <div class="mb-6">
+                <h4 class="text-xl font-semibold mb-2">Ringkasan Proyek</h4>
+                <p class="text-gray-700">Setiap karya dalam galeri ini merepresentasikan eksplorasi saya dalam memecahkan berbagai tantangan desain, mulai dari aplikasi mobile untuk kebutuhan sehari-hari hingga dashboard web yang kompleks. Tujuan utama saya dalam setiap proyek adalah menciptakan solusi desain yang bersih, fungsional, dan yang terpenting, mudah digunakan oleh target penggunanya.</p>
+            </div>
+            <div class="mt-8">
+                <h4 class="text-xl font-semibold mb-4">Galeri Proyek</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div><img src="image/Onboarding.png" alt="Detail Proyek 1" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/Home.png" alt="Detail Proyek 2" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/Detail Item.png" alt="Detail Proyek 3" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/Order.png" alt="Detail Proyek 4" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/1 - A - Launch.png" alt="Detail Proyek 5" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/4- A - Home.png" alt="Detail Proyek 6" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/6 - A - Account Balance (1).png" alt="Detail Proyek 7" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/9.4.0 - A - Categories.png" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/WhatsApp Image 2025-06-10 at 19.58.18_2d4a94dc.jpg" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/WhatsApp Image 2025-06-10 at 19.58.20_4b455f00.jpg" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/WhatsApp Image 2025-06-10 at 19.58.22_1b86ba07.jpg" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/WhatsApp Image 2025-06-10 at 19.58.23_60d6d809.jpg" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="project-modal-6" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 relative">
+             <button class="close-modal absolute top-4 right-4 text-gray-500 hover:text-gray-800 z-10">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="text-2xl font-bold">Berbagai Desain Grafis</h3>
+            </div>
+            <img src="image/Mochiy Pop One (2).png" alt="Fitness Tracker App" class="w-full h-64 object-cover rounded-lg mb-6">
+            <div class="mb-6">
+                <h4 class="text-xl font-semibold mb-2">Ringkasan Proyek</h4>
+                <p class="text-gray-700">Ini adalah kumpulan berbagai karya desain grafis yang menunjukkan kemampuan saya dalam menerjemahkan ide menjadi solusi visual yang efektif. Bagi saya, desain yang baik bukan hanya tentang estetika, tetapi juga tentang komunikasi yang jelas dan fungsionalitas untuk mencapai tujuan. Koleksi ini mencakup berbagai jenis desain, yang membuktikan kemampuan adaptasi saya terhadap berbagai gaya dan kebutuhan.</p>
+            </div>
+            <div class="mt-8">
+                <h4 class="text-xl font-semibold mb-4">Galeri Proyek</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div><img src="image/Poster Litdig (1).png" alt="Detail Proyek 1" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/463_2023G_Cahyo Faizz Khafidzi_Tugas isu global_page-0001.jpg" alt="Detail Proyek 2" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/pamflet sosialisasi kipk.png" alt="Detail Proyek 3" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/Pamflet Webinar TOEFL (1).jpg" alt="Detail Proyek 4" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/poster (1).png" alt="Detail Proyek 5" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/poster gayatama.jpg" alt="Detail Proyek 6" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/Poster PKn Kel1 (1).png" alt="Detail Proyek 7" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/The secret to bright and glowing skin every day! (2).png" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/1000088595.png" class="rounded-lg shadow-md w-full h-96 object-contain bg-gray-100"></div>
+                    <div><img src="image/Achmad Diky Setiawan.jpg" class="rounded-lg shadow-md w-full"></div>
+                    <div><img src="image/Achmad Kautsar, S.E., M.M.png" class="rounded-lg shadow-md w-full"></div>
+                    <div><img src="image/(Buat Banyak 1) (Buat Banyak 1) Card MC.png" class="rounded-lg shadow-md w-full"></div>    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; <span id="current-year"></span> Cahyo Faizz Khafidzi. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // Project modal functionality
+        const projectLinks = document.querySelectorAll('a[href^="#project-modal-"]');
+        projectLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const modalId = link.getAttribute('href');
+                const modal = document.querySelector(modalId);
+
+                if (modal) {
+                    const closeModalButton = modal.querySelector('.close-modal');
+                    
+                    modal.classList.remove('hidden');
+                    setTimeout(() => {
+                        modal.classList.add('opacity-100');
+                    }, 10);
+
+                    const closeModal = () => {
+                        modal.classList.remove('opacity-100');
+                        setTimeout(() => {
+                            modal.classList.add('hidden');
+                        }, 300);
+                    };
+
+                    if(closeModalButton) {
+                        closeModalButton.addEventListener('click', closeModal, { once: true });
+                    }
+                    
+                    modal.addEventListener('click', (event) => {
+                        if (event.target === modal) {
+                            closeModal();
+                        }
+                    });
+                }
+            });
+        });
+
+        // Animate sections on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.section').forEach(section => observer.observe(section));
+    </script>
+</body>
+</html>
